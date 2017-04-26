@@ -211,12 +211,12 @@ footer{
 
 /*全部产品*/
 /*头部搜索框*/
-.head-content {
-    width: 100%;
-    margin: 0 auto;
-}
+.header-content {
+     width: 100%;
+     margin: 0 auto;
+ }
 
-.head-title {
+.header-title {
     margin: 0 auto;
     line-height: 4rem;
     font-size: 2rem;
