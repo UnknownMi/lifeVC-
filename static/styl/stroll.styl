@@ -12,18 +12,12 @@ html
 body
     margin: 0 auto
     font-size: 100%
-    max-width: 640px
-    min-width: 320px
     font-family: Microsoft YaHei,Helvetica,STHeiti,Droid Sans Fallback,sans-serif
     overflow: hidden
     height: 100%
     background-color: #f2f2f2
 
 
-@media screen and (max-width: 768px) and (min-width: 320px)
-     body, footer, header
-        min-width: 320px
-        max-width: 768px
 
 h1,h2,h3,h4
     font-weight 400
@@ -42,8 +36,6 @@ header
     top: 0;
     z-index: 999;
     margin: 0 auto;
-    min-width: 320px;
-    max-width: 640px;
 
 .header-content
     width: 100%;
@@ -200,9 +192,7 @@ header
 
 //底部选项卡样式
 footer
-    min-width: 320px;
-    max-width: 640px;
-
+    width 100%
 
 #bottombar
     height: 4.5rem;
@@ -265,3 +255,9 @@ footer
     a.selected .accountcenterico
         background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAdVBMVEUAAAAAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnELMF8/DAAAAJnRSTlMAX/249+3AlXx2TUID3ayQiFMlHxIH9eXGn9TLsZlqWjYvHBYMgbeMtawAAAEQSURBVEjHrdTZboMwEIXhybCHNYQQyNZsPe//iK1EpIjgY7tSv2t+aSw8ln+xy7NkTLJ8J162SYRJlGzFqUhDvIVpIXbPAHPB0z59jE+x9SRnLJ2Fy2GS8+AIk6MwV5hdWdCQoGHBQIKBBREJIhaAYYHCTFmwJ8GeBQEJAhZkJMjoJihMlG9FBZNKqDbEUtgKd8HSRWxqfKrFLtX5gVNxuJ9mwekuVrdKMafVTajHqFjSsSPfryN2l3J2XEYzWUpg05B95r5lbgWXL3KJqL6Vt2KAW0wHcg9VlPBRFvKygZ8NXX7HY9Ap/GhHJnLNVINg2xeDYL+ihK9yCnr46skrz03BAb4Or/+w/rXy8ZC/+wHsAbUfMABFwAAAAABJRU5ErkJggg==');
 
+
+//媒体查询
+@media screen and (max-width: 768px) and (min-width: 320px)
+    body, footer, header
+        min-width: 320px
+        max-width: 768px

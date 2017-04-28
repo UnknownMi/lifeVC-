@@ -1,0 +1,50 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0 auto;
+  font-size: 100%;
+  width: 100%;
+  font-family: Microsoft YaHei, Helvetica, STHeiti, Droid Sans Fallback, sans-serif;
+  overflow: hidden;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+button,
+input,
+keygen,
+select,
+textarea {
+  outline: 0 none;
+  font-family: '\\5FAE\8F6F\96C5\9ED1', Microsoft YaHei, Helvetica, STHeiti, Droid Sans Fallback, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+p {
+  line-height: 1.5em;
+}
+.clearFix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  body,
+  footer,
+  header,
+  #app,
+  .view-cont {
+    min-width: 320px;
+    max-width: 768px;
+  }
+}

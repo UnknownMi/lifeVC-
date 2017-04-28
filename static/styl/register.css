@@ -1,0 +1,209 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0 auto;
+  font-size: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  font-family: Microsoft YaHei, Helvetica, STHeiti, Droid Sans Fallback, sans-serif;
+  overflow: hidden;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  body,
+  footer,
+  header {
+    min-width: 320px;
+    max-width: 768px;
+  }
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+p {
+  line-height: 1.5em;
+}
+.clearFix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#app {
+  height: 100%;
+}
+.register-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.register-wrap input {
+  outline: none;
+  border: 0;
+  font-family: Microsoft YaHei, sans-serif;
+}
+.register-header {
+  width: 100%;
+  height: 2.82rem;
+  background: #fff;
+  position: relative;
+  flex-grow: 0;
+}
+.register-header .acct-top-back {
+  width: 26px;
+  height: 26px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  left: 0.3rem;
+  top: 46px;
+  border: 1px solid #3aad36;
+}
+.register-header .acct-top-back:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: block;
+  border-left: 1px solid #3aad36;
+  border-top: 1px solid #3aad36;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  -webk-o-transform: rotate(-45deg);
+  -m-o-transform: rotate(-45deg);
+  --o-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.register-header .acc-top-show {
+  width: 2.4rem;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -1.2rem;
+}
+.bg-wrap {
+  flex-grow: 2;
+  background: url("../image/background/login-big-bg.jpg") no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+.bg-wrap .register-content {
+  width: 100%;
+  height: 6.5rem;
+  box-sizing: border-box;
+}
+.bg-wrap .register-content h1 {
+  font-size: 20px;
+  height: 1.04rem;
+  width: 100%;
+  text-align: center;
+  color: #037049;
+  line-height: 1.4rem;
+  box-sizing: border-box;
+}
+.fm_list {
+  margin-bottom: 0.2rem;
+  box-sizing: border-box;
+}
+.fm_list li {
+  width: 90%;
+  margin: 0 auto;
+  height: 1rem;
+  border-bottom: 1px solid #dbdbdb;
+  position: relative;
+}
+.fm_list li .verifycode_img {
+  position: absolute;
+  right: -70%;
+  top: -7px;
+  width: 100%;
+}
+.fm_list li .verifycode_img img {
+  vertical-align: middle;
+}
+.fm_list li .verifycode_img img:first-child {
+  width: 20%;
+}
+.fm_list li .verifycode_img img:last-child {
+  width: 5%;
+}
+.field_ipt {
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1rem;
+  box-sizing: border-box;
+}
+#regCaptcha {
+  width: 70%;
+}
+#register-form p {
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.1rem;
+}
+#register-form p a {
+  color: #3ea438;
+  text-decoration: underline;
+}
+.fidld_skip {
+  display: inline-block;
+  font-size: 16px;
+  color: #3aad36;
+  text-decoration: none;
+  border: 1px solid #3aad36;
+  border-radius: 4px;
+  padding: 0.08rem 0.3rem;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0.2rem;
+  line-height: normal;
+}
+#register-form .btn_login,
+#register-form .btn_regisiter {
+  width: 80%;
+  overflow: hidden;
+  display: block;
+  outline: none;
+  text-align: center;
+  font-size: 19px;
+  color: #fff;
+  line-height: 0.72rem;
+  letter-spacing: 20px;
+  text-indent: 20px;
+  box-sizing: border-box;
+  padding: 0;
+}
+#register-form .btn_login {
+  margin: 10px auto 0;
+  background-color: #8a8a8a;
+  border: 1px solid #8a8a8a;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+#register-form .btn_regisiter {
+  margin: 0 auto 0.3rem;
+  background-color: #3aad36;
+  border: 1px solid #3aad36;
+  border-radius: 5px;
+}

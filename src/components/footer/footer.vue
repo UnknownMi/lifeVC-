@@ -1,11 +1,110 @@
 <template>
-    <div>footer components</div>
+  <footer id="bottombar">
+    <ul id="footermenuNav">
+      <li>
+        <router-link to="/" class="" exact>
+          <div class="ico homeico"></div>
+          <span class="lispan">首页</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/all" class="">
+          <div class="ico typeico"></div>
+          <span>全部产品</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/stroll" class="">
+          <div class="ico strollico"></div>
+          <span>闲逛</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/cart" class="">
+          <div class="ico shoppingcartico"></div>
+          <span>购物车</span> <!----> <!---->
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/usercenter" class="">
+          <div class="ico accountcenterico"></div>
+          <span>账户中心</span>
+          <span class=""></span>
+        </router-link>
+      </li>
+    </ul>
+  </footer>
 </template>
 
 <script>
-    export default {}
+  export default {}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../../common/stylus/base.styl"
 
+  footer
+    width 100%
+
+  #bottombar
+    height: 4.5rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #f8f8f8;
+    border-top: .04rem solid #ddd;
+    z-index: 900;
+
+  #footermenuNav
+    text-align: center;
+    .ico
+      width: 100%;
+      height: 3.3rem;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: 28%;
+      margin-bottom: .2rem;
+    li
+      width: 20%;
+      float: left;
+      a
+        display: block;
+        color: #ababab;
+        line-height: .1rem;
+        font-size: 1.1rem;
+        vertical-align: bottom;
+        text-align: center;
+        &.selected
+          color: #009c42;
+        .lispan
+          font-size: 1.1rem;
+    .homeico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAbFBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaB0FoYAAAAI3RSTlMA+pHrKQbzuxgSC+LezcWqeWtcQDQf2NWyo56ZiYN/Y1BKJXbYS5EAAAEcSURBVEjH7ZPLloIwEESnSaKALxTx/c7//+NU4MyUjCTBzejCWkB3U3WSc0m+XqY0fc5/Fjk/4z9a6Njbbra21tb082dDmIf1I+vjr9aw7ozZ4bWu4v6lgvHkqhMKtYz5rwNrZdHUC7F2cA37585T/nSlS89D/gN2MdLs9QiDgx/nDJ8naeuHTzCaGQ/OqSOZt4e5wzvNOnGu8GlvHpbdY7yqPDgL9lTRifdCnPci3ssjTlX6aJTqL94Eq461H7cew5CQBHF2iXjzO5wbNCHlm1+8Ny7nE7d9w/aUdZIk5hcLKQ3KjSQSkMZWuPPVKBKoPTyZsQAd/x4gD7KLBuBnIhhgTfUJsP4EPgG0LYWmPKGUBKe8A7wFnumb6hti7z9v6uz02AAAAABJRU5ErkJggg==');
+
+    a.selected .homeico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAAAAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEJ7h1ASAAAAG3RSTlMA/OnDkCcSCPXaqmsfAePVo4mDeWNQSjcyGgOuh2jLAAAAtUlEQVRIx+3QyRKDIBBFUZuAgvM8vf//z1iWlSIWtrBKFp4lvN7c6GeWJWzfE/UB86LFpi1890mNXZ347eMXDq/YZ59X+Kjy+/0sYBHz3X7U+KJHfp8RTijjcjZwaIrLnCmc0oTLaePz5gaXjCPvJMAQ03k/aLD0cJeTzbtKeJArk5PJ68rJ51UG3oza9gIBhIo6BOkiVSJAqY5Q8LEvn4Pz13PwHIQfEGzEvB4k2T/y4vVPvQFhvn9R6PLAtwAAAABJRU5ErkJggg==');
+
+    .typeico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYs5FxxAAAACnRSTlMA5Skc3cKxeT0GBVZw6gAAAD5JREFUOMtjGGKA0xKHROPCBuwSXqscGJikVqEDIYZVqxYwsK/CAMsZolYFYNdhJmbAMKzBaOgig9HQHXwAAOIlf0tmWGbNAAAAAElFTkSuQmCC');
+
+    a.selected .typeico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEUAAAAAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEKz1vbMAAAACnRSTlMA5Skc3cKxeT0GBVZw6gAAAD5JREFUOMtjGGKA0xKHROPCBuwSXqscGJikVqEDIYZVqxYwsK/CAMsZolYFYNdhJmbAMKzBaOgig9HQHXwAAOIlf0tmWGbNAAAAAElFTkSuQmCC');
+
+    .strollico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAWlBMVEUAAABmZWZmZGZnZmZmZWZmZmZoaGhmZmZmZWZmZWZmZWZmZGZmZGZmZGVmZGVmZWVnZ2dmZWVmZGVmZWZnZWZmZGZmZWZmZWZoZ2drZmtvampnZGZmZWZmZGU6sV+kAAAAHXRSTlMA6Kg482oqRYJ4w7av3dS+I9mbj1pu7c0eEQpSYYtFbUIAAAHXSURBVDjLjVXbloMgEBPEVQHxUqu2Nv//m4tVGVBxN08ejCEzk+MkB7zzUhsmRFvzIk1ukXMBD6zLo9R5/DJUV2RZ0SkGC3ktPykA7cN7mT5aALo5c3sBVP3ptAKGk5cSEM+rC58COLx4WNmf60p+rPjjoCtfsbpfMtDugTq5QQ0439OAinSvtCsMjftQOL8R3wJ6GxuQJX8gA9YBjGijitlne2ohN+H5msgZ3TmvNXKYCHGBK8ags5kUKK6JQtdg7rgA+7oIglWtRFXaUw1OqVp4JapAF4DcYy+Q+SqF+5p69PLEvP5zSzRhSjiklxgWZK1OGEqfzJZyG6WW6SrwIGyt9dWHltOFBeUsU9rEgZzZk41MloncBja4Nbba2Dob2qj9AoMK5G6ZCuTgoWUXYhcMal2B6mjZIi0kBYOGEpTBv4WVtYDFabRpaJNBqpXIeEYaNKEOI31NxCNGdGv4891yhOixpEv/50yk7Ms9XJ/kD3xcTzXYdM+dGPT22Aww7zvu22BoPPf6jqypBxZPy35HdS33GaYEZor4NfTLJW3WX3F7RrrU9QEY89PpSGvCR6MByLLxTkpJC+iIVMLC2M02z3a3mevVRrd27J9Lc489r9vIOv4FXQsplico/ngAAAAASUVORK5CYII=');
+
+    a.selected .strollico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAA0lBMVEUAAAANoz8PoUAOoT4oqlMNoT8OoT4NoD5OunINoT6j27aAzZoNoD8NoT8OoT/////8/vzm9eoNoT/T7dsNoT8Ooj4OoT8PpUQOokD///8NoT7////r9+8OoT/t+PHd8uQOoUAYpUcdp0v///82sF/z+vbw+fNewH9mxIc4sWBAtGcOoD+95Mm148Ti8+jn9u2H0aDh8+eU1aqe2bIOoT8OoT8Ooj4SpkP9/v0wrlpFtmvv+fP1+/fa8eIOoT8OoT4QoUEas00gv0ANoD7///8SokKhU4dVAAAAQ3RSTlMAOETz2vzv597YyLm/rqX229LDupqDbSJG/Pjl0n3YvZD8+e3f3drY1NDMzMjHxMLCwLe2tFhJHPLy4dHJu6OTTwoIdbqiQgAAAZxJREFUOMuVldlWwjAQhqfWUottVSygiODGvoOC+/aH938lWU47JiUQvqte/CfnS2cyQwq/0+vAc0u254d5i7ZyEdoA40YH2uh3Bylym4+fPWIjQTGdfbKhIZNyuYYepyBnv7CVG4NzmcI/X+zCSbxnGewkE/8THwYE6+wURqyr04GO+VF2yLVc9YM2eHYixDESlnf81AVXHCIhIvqxdcGrj7I4BeOmLObP6+Bo3HJQFufSFdXiHQlxP5i0S1hwe7lUZvKkNGZW3CclakjKQEgeJM7EADE9SRnwyZWVT8QEeK2UHwDUZWV4VFKV20BFiD5wpyjDJltRvioBZSGqQDNW5rCnKI8APPSri1g3VmYNX1EeI6amKMOnUFFuxd8vQlFGSHlF2cGCu2a3xo3BRbFk5SpuG736pVjynu5oV1J+q6yDp+fHybncSBRJyhxMEcnNn9UEufkph5ihJsjPiqx9HiwFe4wCKu4zZOjAMRhfCQWDwcjcGIxcpuCYDPPEO7N7TTDFwGABMVbOYLUxF5FrsDQZKx/6nr15Hf8BtTFsID8eqccAAAAASUVORK5CYII=');
+
+    .shoppingcartico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAe1BMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY+mZAPAAAAKHRSTlMA+3P1BtcJxo94OjQZ7uTfzpopHsCuoWVOI724sqZsVkpBEQ+Efi5g8YO1+gAAAU5JREFUSMfVldduwzAMRSV5zwxnz2a15/+/sEWNGnVCxtFjziPBKwHivZR5U5ylpZ6+1B9W/JG9JMjB74YrTIwPY1j59DdgLz6CJWyMDztwPv1xAL3HSS1DjHonWAZJe4KEQT56ggzmRmcKQShUVNzjeaP2ToUNLO9K6TOrXCw0d7UT1KrgCGPJ7p+aYAHXh+Iebpqghly6NlH6C6gen/BsoZQFN1gI5Rks1ewc5eHsxP7SYs9CfQ1BLAm+YGYkIiW1c22xpChoE8r17Ki5FfFdSNEzH6uP58EBtkalvDNH3MRbOGgL3dWINIpgjkykb0+CQJpCqHpyEoaTLo0rqApTVOqat3D5iQXYblWlrWEyWRDA+vcfCDq7L9o8O1mwhaQoEth01rJufbCQy4ITtJy6CLbMnn/E1nVTjACISqNR7KNo/+/+2CWjJIvNW/ANvhZIo9s5gpsAAAAASUVORK5CYII=');
+
+    a.selected .shoppingcartico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAgVBMVEUAAAAAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEJ3C7AZAAAAKnRSTlMA/XIG+vU6GgnWxp6QdjQQ79rPwLpMKiQg5OCvpIZ6ZUHss2unlm1aWFITsuPFAAABMklEQVRIx9XV2ZKCMBQE0E4Csgoyorivs/b/f+BMYQ0lmBvMo+e9K5XldvCidMCb9RLPMGf+OzwVmJB+K+zJDD7eyB94iMig9AkcyRo+tqSGhzgkG9zJFcdUuBdwVN4LpBy16AWmHBOaXmDJMVv0VRxxHARyuqloEDjR7Q0DZkanPYbe6TR5CHzR5WweAmVAhx0ezenwbWsFypRtdhrK5rBJKJoKvSBaCs0j2cDuQsEHfCTkAh4aMox9Ap/kBaIoGrTLKq7Jq1Toek2rlVhudoncnpyFtlswYp9nxmTdNC7+8gWKmXiqAVkCJRmgdbiVXS5+UWG7uxUZdt2WAcikp4eaTIsiJevuaSndXBU5sQdOii11GozgHALdJpTubvE2IEkESbGrqt3d+rFON+k0xkv4BUECgP/b/kGcAAAAAElFTkSuQmCC');
+
+    .accountcenterico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAe1BMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY+mZAPAAAAKHRSTlMA+wav9lASw3wlH7mTioUM3ta+oHHQtBw3MBbw6+bJmVlIQXhhX2piwz4+bgAAAbZJREFUSMetlNmWmzAQRBG7DWN28L7P5P7/F0YEx2DLDeSc3CdT7pJaUp+y/gv2tYyLuLza88qX8Y6OXbycsXro0uOGU7skEZr0VH6XpxRNlIyvnwPV5fF1qYB8dI8T8GX3/i/gNFJ/BcIXJQSusuEIzpvkwFGsX4Navl+ygrVk0B0XhljoU0mGADxD9CCQDHtoDLGBvWQABFVAgW2+JSjJcICFIS7gIBkiuBviHSLJcIPcEHO4GaLxSOJjmnOQJa/jnrXTIrJwobaHV1SDu7BkfoCg6R8tAH6sMWL0kqtld6SV3pDYGidUaLLaqTM0KrQmaByGOM14+cZRvKKcjVy+LbqaqgjLsgyLSv35LHyh/rJHk9/7//1fAZrD5fNx0dSb9yYjQN2ECz14lonXbrwy5BUQbD8fLfjg+AYcW8pPBzgbQxTZcoJG7yMVdGMq4qcQvDakNtYYazVsyk77sBoJudQeZNXOnzD4u0HKRd2tTW5R/zUrWE4aFqAebZzbRJ/m+OwpbjuaZvW8mby1TuM9Uys1ElI6RNr9ciGZYUjAHc1zOfcrqlmGjOzxDp4/y7A9b61/5zcPhTVGJpPASwAAAABJRU5ErkJggg==');
+
+    a.selected .accountcenterico
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAdVBMVEUAAAAAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnELMF8/DAAAAJnRSTlMAX/249+3AlXx2TUID3ayQiFMlHxIH9eXGn9TLsZlqWjYvHBYMgbeMtawAAAEQSURBVEjHrdTZboMwEIXhybCHNYQQyNZsPe//iK1EpIjgY7tSv2t+aSw8ln+xy7NkTLJ8J162SYRJlGzFqUhDvIVpIXbPAHPB0z59jE+x9SRnLJ2Fy2GS8+AIk6MwV5hdWdCQoGHBQIKBBREJIhaAYYHCTFmwJ8GeBQEJAhZkJMjoJihMlG9FBZNKqDbEUtgKd8HSRWxqfKrFLtX5gVNxuJ9mwekuVrdKMafVTajHqFjSsSPfryN2l3J2XEYzWUpg05B95r5lbgWXL3KJqL6Vt2KAW0wHcg9VlPBRFvKygZ8NXX7HY9Ap/GhHJnLNVINg2xeDYL+ihK9yCnr46skrz03BAb4Or/+w/rXy8ZC/+wHsAbUfMABFwAAAAABJRU5ErkJggg==');
 </style>
