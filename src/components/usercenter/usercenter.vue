@@ -7,155 +7,156 @@
         </div>
       </header>
 
-      <div class="uscenter-cont">
-        <div class="page-loadmore-wrap">
-          <div class="page-loadmore">
-            <div class="loadmore-top">
-              <span class="loadmore-top-text">下拉刷新</span>
-            </div>
-            <div class="acct-user-wrap">
-              <div class="acct-nolog">
-                <span class="state">您还未登录</span>
-                <div class="btn-entry">
-                  <a href="#/login">登录</a>
-                  <span class="split"></span>
-                  <a href="#/register">注册</a>
+      <div class="uscenter_scroll">
+        <scroller :on-refresh="refresh">
+          <div class="uscenter-cont">
+            <div class="page-loadmore-wrap">
+              <div class="page-loadmore">
+                <div class="acct-user-wrap">
+                  <div class="acct-nolog">
+                    <span class="state">您还未登录</span>
+                    <div class="btn-entry">
+                      <a href="#/login">登录</a>
+                      <span class="split"></span>
+                      <a href="#/register">注册</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="dashboard-order life-dashboard-order">
+                  <ul>
+                    <li>
+                      <!--<a href="#/usercenter/userorder/waittoypay">-->
+                      <a href="javascript:;">
+                                  <span class="item-ico">
+                                       <span id="ico1"></span>
+                                  </span>
+                        <span class="item-title">待支付</span>
+                      </a>
+                    </li>
+                    <li>
+                      <!--<a href="#/usercenter/userorder/packing">-->
+                      <a href="javascript:;">
+                                  <span class="item-ico">
+                                       <span id="ico2"></span>
+                                  </span>
+                        <span class="item-title">待发货</span>
+                      </a>
+                    </li>
+                    <li>
+                      <!--<a href="#/usercenter/userorder/shipped">-->
+                      <a href="javascript:;">
+                                  <span class="item-ico">
+                                       <span id="ico3"></span>
+                                  </span>
+                        <span class="item-title">待收货</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <!--<a href="#/usercenter/userorder/waittocomment">-->
+                      <a href="javascript:;">
+                                  <span class="item-ico">
+                                       <span id="ico4"></span>
+                                  </span>
+                        <span class="item-title">待评论</span>
+                      </a>
+                    </li>
+                    <li>
+                      <!--<a href="#/usercenter/userorder/reply">-->
+                      <a href="javascript:;">
+                                  <span class="item-ico">
+                                       <span id="ico5"></span>
+                                  </span>
+                        <span class="item-title">回复</span>
+                      </a>
+                    </li>
+                    <li>
+                      <!--<a href="#/usercenter/returnorder">-->
+                      <a href="javascript:;">
+                                  <span class="item-ico">
+                                      <span id="ico6"></span>
+                                  </span>
+                        <span class="item-title">退换货</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="dashboard">
+                  <ul>
+                    <li>
+                      <a>
+                        <img src="./image/ic_list_cm.png" class="item-i">
+                        <span class="item-title">我的订单</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a>
+                        <img src="./image/ic_coupon_cm.png" class="item-i">
+                        <span class="item-title">我的优惠券</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img src="./image/ic_pig_cm.png" class="item-i">
+                        <span class="item-title">现金积分</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img src="./image/ic_invoice.png" class="item-i">
+                        <span class="item-title">关于发票</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a>
+                        <img src="./image/i_gear_cm.png" class="item-i">
+                        <span class="item-title">密码和登录信息</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img src="./image/i_dialoguebubble3_cm.png" class="item-i">
+                        <span class="item-title">老会员建议</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img src="./image/i_customerservice_cm.png" class="item-i">
+                        <span class="item-title">客户服务</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img src="./image/ic_currentnode_cm.png" class="item-i">
+                        <span class="item-title">地址管理</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <img src="./image/sms_cm.png" class="item-i">
+                        <span class="item-title">手机验证</span>
+                        <span class="arr-r"></span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="dashboard-order life-dashboard-order">
-              <ul>
-                <li>
-                  <!--<a href="#/usercenter/userorder/waittoypay">-->
-                  <a href="javascript:;">
-                                <span class="item-ico">
-                                     <span id="ico1"></span>
-                                </span>
-                    <span class="item-title">待支付</span>
-                  </a>
-                </li>
-                <li>
-                  <!--<a href="#/usercenter/userorder/packing">-->
-                  <a href="javascript:;">
-                                <span class="item-ico">
-                                     <span id="ico2"></span>
-                                </span>
-                    <span class="item-title">待发货</span>
-                  </a>
-                </li>
-                <li>
-                  <!--<a href="#/usercenter/userorder/shipped">-->
-                  <a href="javascript:;">
-                                <span class="item-ico">
-                                     <span id="ico3"></span>
-                                </span>
-                    <span class="item-title">待收货</span>
-                  </a>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <!--<a href="#/usercenter/userorder/waittocomment">-->
-                  <a href="javascript:;">
-                                <span class="item-ico">
-                                     <span id="ico4"></span>
-                                </span>
-                    <span class="item-title">待评论</span>
-                  </a>
-                </li>
-                <li>
-                  <!--<a href="#/usercenter/userorder/reply">-->
-                  <a href="javascript:;">
-                                <span class="item-ico">
-                                     <span id="ico5"></span>
-                                </span>
-                    <span class="item-title">回复</span>
-                  </a>
-                </li>
-                <li>
-                  <!--<a href="#/usercenter/returnorder">-->
-                  <a href="javascript:;">
-                                <span class="item-ico">
-                                    <span id="ico6"></span>
-                                </span>
-                    <span class="item-title">退换货</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="dashboard">
-              <ul>
-                <li>
-                  <a>
-                    <img src="./image/ic_list_cm.png" class="item-i">
-                    <span class="item-title">我的订单</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <a>
-                    <img src="./image/ic_coupon_cm.png" class="item-i">
-                    <span class="item-title">我的优惠券</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src="./image/ic_pig_cm.png" class="item-i">
-                    <span class="item-title">现金积分</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src="./image/ic_invoice.png" class="item-i">
-                    <span class="item-title">关于发票</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <a>
-                    <img src="./image/i_gear_cm.png" class="item-i">
-                    <span class="item-title">密码和登录信息</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src="./image/i_dialoguebubble3_cm.png" class="item-i">
-                    <span class="item-title">老会员建议</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src="./image/i_customerservice_cm.png" class="item-i">
-                    <span class="item-title">客户服务</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src="./image/ic_currentnode_cm.png" class="item-i">
-                    <span class="item-title">地址管理</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src="./image/sms_cm.png" class="item-i">
-                    <span class="item-title">手机验证</span>
-                    <span class="arr-r"></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
+        </scroller>
       </div>
 
       <v-footer></v-footer>
@@ -166,6 +167,11 @@
   import footer from '../footer/footer.vue'
 
   export default {
+    methods: {
+      refresh () {
+
+      }
+    },
     components: {
       'v-footer': footer
     }
@@ -206,9 +212,12 @@
       z-index 9
 
   //内容区
+  .uscenter_scroll
+    ._v-container
+          margin-top: 4rem
+
   .uscenter-cont
     width 100%
-    margin-top 4rem
     padding-bottom 4.5rem
     color: #2e2e2e
 

@@ -2,7 +2,7 @@
   <footer id="bottombar">
     <ul id="footermenuNav">
       <li>
-        <router-link to="/" class="" exact>
+        <router-link to="/" :class="{voidSelected: isHome}" exact>
           <div class="ico homeico"></div>
           <span class="lispan">首页</span>
         </router-link>
@@ -37,7 +37,17 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    computed: {
+      isHome: function () {
+        if (this.$route.name === 'newGoods') {
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -74,14 +84,14 @@
         font-size: 1.1rem;
         vertical-align: bottom;
         text-align: center;
-        &.selected
+        &.selected,&.voidSelected
           color: #009c42;
         .lispan
           font-size: 1.1rem;
     .homeico
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAbFBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaB0FoYAAAAI3RSTlMA+pHrKQbzuxgSC+LezcWqeWtcQDQf2NWyo56ZiYN/Y1BKJXbYS5EAAAEcSURBVEjH7ZPLloIwEESnSaKALxTx/c7//+NU4MyUjCTBzejCWkB3U3WSc0m+XqY0fc5/Fjk/4z9a6Njbbra21tb082dDmIf1I+vjr9aw7ozZ4bWu4v6lgvHkqhMKtYz5rwNrZdHUC7F2cA37585T/nSlS89D/gN2MdLs9QiDgx/nDJ8naeuHTzCaGQ/OqSOZt4e5wzvNOnGu8GlvHpbdY7yqPDgL9lTRifdCnPci3ssjTlX6aJTqL94Eq461H7cew5CQBHF2iXjzO5wbNCHlm1+8Ny7nE7d9w/aUdZIk5hcLKQ3KjSQSkMZWuPPVKBKoPTyZsQAd/x4gD7KLBuBnIhhgTfUJsP4EPgG0LYWmPKGUBKe8A7wFnumb6hti7z9v6uz02AAAAABJRU5ErkJggg==');
 
-    a.selected .homeico
+    a.selected .homeico,a.voidSelected .homeico
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAAAAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEIAnEJ7h1ASAAAAG3RSTlMA/OnDkCcSCPXaqmsfAePVo4mDeWNQSjcyGgOuh2jLAAAAtUlEQVRIx+3QyRKDIBBFUZuAgvM8vf//z1iWlSIWtrBKFp4lvN7c6GeWJWzfE/UB86LFpi1890mNXZ347eMXDq/YZ59X+Kjy+/0sYBHz3X7U+KJHfp8RTijjcjZwaIrLnCmc0oTLaePz5gaXjCPvJMAQ03k/aLD0cJeTzbtKeJArk5PJ68rJ51UG3oza9gIBhIo6BOkiVSJAqY5Q8LEvn4Pz13PwHIQfEGzEvB4k2T/y4vVPvQFhvn9R6PLAtwAAAABJRU5ErkJggg==');
 
     .typeico

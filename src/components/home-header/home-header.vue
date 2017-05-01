@@ -10,24 +10,46 @@
         </a>
       </div>
       <div class="headermenuNav">
-        <ul class="menunav-wrap">
-          <li class="selected"><a href="javascript:;">首页</a></li>
-          <li><a href="javascript:;">新品</a></li>
-          <li><a href="javascript:;">家务</a></li>
-          <li><a href="javascript:;">下厨</a></li>
-          <li><a href="javascript:;">家居服</a></li>
-          <li><a href="javascript:;">生活</a></li>
-          <li><a href="javascript:;">软装</a></li>
-          <li><a href="javascript:;">床品</a></li>
-          <li><a href="javascript:;">工作与旅行</a></li>
-          <li><a href="javascript:;">关于lifeVC</a></li>
-        </ul>
+        <swiper :options="swiperOption" ref:navSwiper class="menunav-wrap"><!--
+          --><swiper-slide class="navitem"><router-link to="/" exact>首页</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/new">新品</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/2">家务</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/3">下厨</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/4">家居服</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/5">生活</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/6">软装</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/7">床品</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/8">工作与旅行</router-link></swiper-slide><!--
+          --><swiper-slide class="navitem"><router-link to="/channel/9">关于lifeVC</router-link></swiper-slide><!--
+          -->
+        </swiper>
       </div>
     </header>
 </template>
 
 <script>
-  export default {}
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
+  export default {
+    data () {
+      return {
+        swiperOption: {
+          notNextTick: true,
+          direction: 'horizontal',
+          grabCursor: false,
+          slidesPerView: 'auto',
+          freeMode: true,
+          mousewheelControl: false,
+          observeParents: true,
+          observer: true
+        }
+      }
+    },
+    components: {
+      swiper,
+      swiperSlide
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -64,28 +86,23 @@
     overflow: hidden;
 
   .menunav-wrap
-    width: 800px;
-    height: 4rem;
-
-  .menunav-wrap li
-    width: 80px;
-    height: 4rem;
-    font-size: 1.35rem;
-    text-align: center;
-    line-height: 4rem;
-    float: left;
-    border-bottom: 0.2rem solid #ddd;
-    box-sizing: border-box;
-
-  .menunav-wrap li a
-    color: #333;
-    height: 3.8rem;
-    display: block;
-    line-height: 3.8rem;
-    padding: 0;
-    font-size: 1.35rem;
-
-  li.selected a
-    color: #89be48;
-    border-bottom: 0.2rem solid #89be48;
+    .navitem
+      width: 6.66rem;
+      height: 4rem;
+      font-size: 1.35rem;
+      text-align: center;
+      line-height: 4rem;
+      float: left;
+      border-bottom: 0.2rem solid #ddd;
+      box-sizing: border-box;
+      a
+        color: #333;
+        height: 3.8rem;
+        display: block;
+        line-height: 3.8rem;
+        padding: 0;
+        font-size: 1.35rem;
+        &.selected
+          color: #89be48;
+          border-bottom: 0.2rem solid #89be48;
 </style>

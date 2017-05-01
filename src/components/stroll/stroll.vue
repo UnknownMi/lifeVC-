@@ -1,146 +1,142 @@
 <template>
     <div>
-      <div class="toTop"></div>
+      <div class="toTop" @click="toTop"></div>
       <header id="strollheader">
         <div class="header-content">
           <p class="header-title">闲逛</p>
         </div>
       </header>
-      <div class="stroll-content">
-        <div class="page-loadmore-wrap">
-          <div class="page-loadmore">
-            <div class="loadmore-top">
-              <span class="loadmore-top-text">下拉刷新</span>
-            </div>
-            <div class="stroll-item-list clearFix">
-              <div class="stroll-all-item">
-                <div class="stroll-item">
-                  <div class="stroll-type-item">
-                    <div class="stroll-item-layer">
-                      <img src="./image/01.jpg" class="stroll-item-img">
-                      <span class="tag-new">New</span>
-                    </div>
-                    <h3 class="stroll-item-title">
-                      <a href="javascript:;">无肩简约衣架（5只装）</a>
-                    </h3>
-                    <div class="stroll-item-price">
+      <div class="stroll_scroll">
+        <scroller :on-refresh="refresh"
+                  :on-infinite="infinite"
+                  ref="stroll_scroller">
+          <div class="stroll-content">
+            <div class="page-loadmore-wrap">
+              <div class="page-loadmore">
+                <div class="stroll-item-list clearFix">
+                  <div class="stroll-all-item">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item">
+                        <div class="stroll-item-layer">
+                          <img src="./image/01.jpg" class="stroll-item-img">
+                          <span class="tag-new">New</span>
+                        </div>
+                        <h3 class="stroll-item-title">
+                          <a href="javascript:;">无肩简约衣架（5只装）</a>
+                        </h3>
+                        <div class="stroll-item-price">
                                         <span class="price">
                                             ￥<em>9</em>
                                         </span>
-                      <span class="comment">月销 5255</span>
+                          <span class="comment">月销 5255</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="stroll-item">
-                  <div class="stroll-type-item">
-                    <div class="stroll-item-layer">
-                      <img src="./image/03.jpg" class="stroll-item-img">
-                      <span class="tag-new">New</span>
-                    </div>
-                    <h3 class="stroll-item-title">
-                      <a href="javascript:;">可挂式防潮除湿剂（8袋装）</a>
-                    </h3>
-                    <div class="stroll-item-price">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item">
+                        <div class="stroll-item-layer">
+                          <img src="./image/03.jpg" class="stroll-item-img">
+                          <span class="tag-new">New</span>
+                        </div>
+                        <h3 class="stroll-item-title">
+                          <a href="javascript:;">可挂式防潮除湿剂（8袋装）</a>
+                        </h3>
+                        <div class="stroll-item-price">
                                         <span class="price">
                                             ￥<em>30</em>
                                             <span class="original">￥45</span>
                                         </span>
-                      <span class="comment">月销 6345</span>
+                          <span class="comment">月销 6345</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="stroll-item">
-                  <div class="stroll-type-item">
-                    <div class="stroll-item-layer">
-                      <img src="./image/01.jpg" class="stroll-item-img">
-                      <span class="tag-new">New</span>
-                    </div>
-                    <h3 class="stroll-item-title">
-                      <a href="javascript:;">无肩简约衣架（5只装）</a>
-                    </h3>
-                    <div class="stroll-item-price">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item">
+                        <div class="stroll-item-layer">
+                          <img src="./image/01.jpg" class="stroll-item-img">
+                          <span class="tag-new">New</span>
+                        </div>
+                        <h3 class="stroll-item-title">
+                          <a href="javascript:;">无肩简约衣架（5只装）</a>
+                        </h3>
+                        <div class="stroll-item-price">
                                         <span class="price">
                                             ￥<em>9</em>
                                         </span>
-                      <span class="comment">月销 5255</span>
+                          <span class="comment">月销 5255</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="stroll-all-item">
-                <div class="stroll-item">
-                  <div class="stroll-type-item clearFix">
-                    <div class="cat-menu-a">
-                      <span>新价格</span>
+                  <div class="stroll-all-item">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item clearFix">
+                        <div class="cat-menu-a">
+                          <span>新价格</span>
+                        </div>
+                        <div class="cat-menu-a">
+                          <span>今日新品</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="cat-menu-a">
-                      <span>今日新品</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="stroll-item">
-                  <div class="stroll-type-item">
-                    <div class="stroll-item-layer">
-                      <img src="./image/02.jpg" class="stroll-item-img">
-                      <span class="tag-new">New</span>
-                    </div>
-                    <h3 class="stroll-item-title">
-                      <a href="javascript:;">单手开盖运动杯</a>
-                    </h3>
-                    <div class="stroll-item-price">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item">
+                        <div class="stroll-item-layer">
+                          <img src="./image/02.jpg" class="stroll-item-img">
+                          <span class="tag-new">New</span>
+                        </div>
+                        <h3 class="stroll-item-title">
+                          <a href="javascript:;">单手开盖运动杯</a>
+                        </h3>
+                        <div class="stroll-item-price">
                                         <span class="price">
                                             ￥<em>29</em>
                                         </span>
-                      <span class="comment">月销 13799</span>
+                          <span class="comment">月销 13799</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="stroll-item">
-                  <div class="stroll-type-item">
-                    <div class="stroll-item-layer">
-                      <img src="./image/04.jpg" class="stroll-item-img">
-                    </div>
-                    <h3 class="stroll-item-title">
-                      <a href="javascript:;">双锁扣密封保鲜袋</a>
-                    </h3>
-                    <div class="stroll-item-price">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item">
+                        <div class="stroll-item-layer">
+                          <img src="./image/04.jpg" class="stroll-item-img">
+                        </div>
+                        <h3 class="stroll-item-title">
+                          <a href="javascript:;">双锁扣密封保鲜袋</a>
+                        </h3>
+                        <div class="stroll-item-price">
                                         <span class="price">
                                             ￥<em>9</em>
                                             <span class="original">￥12</span>
                                         </span>
-                      <span class="comment">月销 8159</span>
+                          <span class="comment">月销 8159</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="stroll-item">
-                  <div class="stroll-type-item">
-                    <div class="stroll-item-layer">
-                      <img src="./image/02.jpg" class="stroll-item-img">
-                      <span class="tag-new">New</span>
-                    </div>
-                    <h3 class="stroll-item-title">
-                      <a href="javascript:;">单手开盖运动杯</a>
-                    </h3>
-                    <div class="stroll-item-price">
+                    <div class="stroll-item">
+                      <div class="stroll-type-item">
+                        <div class="stroll-item-layer">
+                          <img src="./image/02.jpg" class="stroll-item-img">
+                          <span class="tag-new">New</span>
+                        </div>
+                        <h3 class="stroll-item-title">
+                          <a href="javascript:;">单手开盖运动杯</a>
+                        </h3>
+                        <div class="stroll-item-price">
                                         <span class="price">
                                             ￥<em>29</em>
                                         </span>
-                      <span class="comment">月销 13799</span>
+                          <span class="comment">月销 13799</span>
+                        </div>
+                      </div>
                     </div>
+
                   </div>
                 </div>
-
               </div>
-            </div>
-            <div class="stroll-bottom">
-              <div class="stroll-loading">
-                <span class="cont"></span>
-                <span class="snakehead"></span>
-              </div>
-              <div class="stroll-bottom-txt">加载中</div>
             </div>
           </div>
-        </div>
+        </scroller>
       </div>
 
       <v-footer></v-footer>
@@ -151,6 +147,21 @@
   import footer from '../footer/footer.vue'
 
   export default {
+    methods: {
+      refresh (done) {
+        setTimeout(() => {
+          done()
+        }, 1000)
+      },
+      infinite (done) {
+        setTimeout(() => {
+          done()
+        }, 1000)
+      },
+      toTop () {
+        this.$refs.stroll_scroller.scrollTo(0, 0, true)
+      }
+    },
     components: {
       'v-footer': footer
     }
@@ -205,16 +216,9 @@
       height: 3rem
       display block
 
-  .stroll-content
-    margin-top: 4rem
-
-  .loadmore-top
-    margin-top -50px
-    text-align center
-    height 50px
-    line-height 50px
-    .loadmore-top-text
-      vertical-align middle
+  .stroll_scroll
+    ._v-container
+      margin-top: 4rem
 
   .stroll-item-list
     background: #fff
@@ -305,16 +309,4 @@
               white-space nowrap
               word-break keep-all
               text-overflow ellipsis
-
-  .stroll-bottom
-    padding-bottom 6rem
-    background: #fff;
-    .stroll-bottom-txt
-      width 100%
-      clear: both
-      text-align center
-      font-size 0.9rem
-      color: #999
-      line-height 1.8rem
-
 </style>

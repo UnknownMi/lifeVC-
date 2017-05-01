@@ -1,13 +1,13 @@
 <template>
     <div>
       <swiper :options="swiperOption" ref="mySwiper">
-        <swiper-slide><img src="./image/1.jpg" alt=""></swiper-slide>
-        <swiper-slide><img src="./image/2.jpg" alt=""></swiper-slide>
-        <swiper-slide><img src="./image/3.jpg" alt=""></swiper-slide>
-        <swiper-slide><img src="./image/4.jpg" alt=""></swiper-slide>
-        <swiper-slide><img src="./image/5.jpg" alt=""></swiper-slide>
-        <swiper-slide><img src="./image/6.jpg" alt=""></swiper-slide>
-        <swiper-slide><img src="./image/7.jpg" alt=""></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/1.jpg" alt=""></a></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/2.jpg" alt=""></a></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/3.jpg" alt=""></a></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/4.jpg" alt=""></a></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/5.jpg" alt=""></a></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/6.jpg" alt=""></a></swiper-slide>
+        <swiper-slide><a href="javascript:;"><img src="./image/7.jpg" alt=""></a></swiper-slide>
         <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
     </div>
@@ -32,11 +32,7 @@
           paginationClickable: true,
           mousewheelControl: false,
           observeParents: true,
-          observer: true,
-          debugger: true,
-          onTransitionStart (swiper) {
-            console.log(swiper)
-          }
+          observer: true
         }
       }
     },
@@ -48,6 +44,10 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .swiper-slide img
-    width: 100%;
+  .swiper-slide
+    a
+      display block
+      height 100%
+    img
+      width: 100%
 </style>

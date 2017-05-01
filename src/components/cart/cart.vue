@@ -2,7 +2,7 @@
   <div>
     <header>
       <div class="header-content">
-        <span class="btn-back">
+        <span class="btn-back" @click="jumpback">
           <label class="leftback-img"></label>
         </span>
         <p class="header-title">购物车</p>
@@ -13,7 +13,7 @@
       </div>
       <div class="header-login-wrap">
         <div class="header-login">
-          <a href="#/login?redirect=/cart" class="btn-login">登录</a>
+          <router-link to="/login" class="btn-login">登录</router-link>
           <span class="login-tip">你可以在登录后同步电脑与手机购物车中的商品</span>
         </div>
       </div>
@@ -63,8 +63,8 @@
                   <p class="title">可降解环保垃圾袋（可拎式）</p>
                   <p class="price">￥9</p>
                 </div>
-              </li>
-              <li>
+              </li><!--
+          --><li>
                 <div class="cart-assem-item">
                   <a href="javascript:;">
                     <img src="./bag.jpg">
@@ -72,8 +72,8 @@
                   <p class="title">可降解环保垃圾袋（可拎式）</p>
                   <p class="price">￥9</p>
                 </div>
-              </li>
-              <li>
+              </li><!--
+          --><li>
                 <div class="cart-assem-item">
                   <a href="javascript:;">
                     <img src="./bag.jpg">
@@ -81,8 +81,8 @@
                   <p class="title">可降解环保垃圾袋（可拎式）</p>
                   <p class="price">￥9</p>
                 </div>
-              </li>
-              <li>
+              </li><!--
+          --><li>
                 <div class="cart-assem-item">
                   <a href="javascript:;">
                     <img src="./bag.jpg">
@@ -90,8 +90,8 @@
                   <p class="title">可降解环保垃圾袋（可拎式）</p>
                   <p class="price">￥9</p>
                 </div>
-              </li>
-              <li>
+              </li><!--
+          --><li>
                 <div class="cart-assem-item">
                   <a href="javascript:;">
                     <img src="./bag.jpg">
@@ -114,6 +114,11 @@
   import footer from '../footer/footer.vue'
 
   export default {
+    methods: {
+      jumpback () {
+        history.back(-1)
+      }
+    },
     components: {
       'v-footer': footer
     }

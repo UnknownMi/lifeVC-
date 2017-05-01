@@ -8,59 +8,61 @@
           <div id="search-bar">
             <form action="">
               <input type="search" placeholder="搜索商品"
-                     class="searchinput">
+                     :class="{searchinput: true,changeStyle: isChange}" @click="changeStyle(true)">
               <input id="btnCancel" type="button" value="取消"
-                     class="sch-cancel">
+                     class="sch-cancel" @click="changeStyle(false)">
             </form>
           </div>
         </div>
       </header>
 
-      <div class="content-wrap">
-        <div class="goodsList">
-          <div class="goodsKind">
-            <p class="kindTitle">家务</p>
-            <ul class="life-goodsUl">
-              <li>
-                <img src="./image/1.jpg">
-                <dl>家务工具</dl>
-              </li>
-              <li>
-                <img src="./image/2.jpg">
-                <dl>家庭清洁剂</dl>
-              </li>
-              <li>
-                <img src="./image/3.jpg">
-                <dl>防霉除菌</dl>
-              </li>
-              <li>
-                <img src="./image/4.jpg">
-                <dl>衣物收纳</dl>
-              </li>
-              <li>
-                <img src="./image/5.jpg">
-                <dl>百纳箱</dl>
-              </li>
-              <li>
-                <img src="./image/6.jpg">
-                <dl>生活必备</dl>
-              </li>
-              <li>
-                <img src="./image/7.jpg">
-                <dl>酵素洗衣液</dl>
-              </li>
-              <li>
-                <img src="./image/8.jpg">
-                <dl>魔力挂钩</dl>
-              </li>
-              <li>
-                <img src="./image/9.jpg">
-                <dl>地毯地垫</dl>
-              </li>
-            </ul>
+      <scroller>
+        <div class="content-wrap">
+          <div class="goodsList">
+            <div class="goodsKind">
+              <p class="kindTitle">家务</p>
+              <ul class="life-goodsUl">
+                <li>
+                  <img src="./image/1.jpg">
+                  <dl>家务工具</dl>
+                </li>
+                <li>
+                  <img src="./image/2.jpg">
+                  <dl>家庭清洁剂</dl>
+                </li>
+                <li>
+                  <img src="./image/3.jpg">
+                  <dl>防霉除菌</dl>
+                </li>
+                <li>
+                  <img src="./image/4.jpg">
+                  <dl>衣物收纳</dl>
+                </li>
+                <li>
+                  <img src="./image/5.jpg">
+                  <dl>百纳箱</dl>
+                </li>
+                <li>
+                  <img src="./image/6.jpg">
+                  <dl>生活必备</dl>
+                </li>
+                <li>
+                  <img src="./image/7.jpg">
+                  <dl>酵素洗衣液</dl>
+                </li>
+                <li>
+                  <img src="./image/8.jpg">
+                  <dl>魔力挂钩</dl>
+                </li>
+                <li>
+                  <img src="./image/9.jpg">
+                  <dl>地毯地垫</dl>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </scroller>
 
       <v-footer></v-footer>
     </div>
@@ -70,6 +72,19 @@
   import footer from '../footer/footer.vue'
 
   export default {
+    data () {
+      return {
+        isChange: false
+      }
+    },
+    methods: {
+      changeStyle (change) {
+        if (this.isChange === change) {
+          return
+        }
+        this.isChange = change
+      }
+    },
     components: {
       'v-footer': footer
     }
