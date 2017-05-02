@@ -49,11 +49,21 @@
       }
     },
     methods: {
-      refresh () {
-
+      refresh (done) {
+        var vmthis = this
+        setTimeout(function () {
+          vmthis.combos.splice(5)
+          done()
+        }, 1000)
       },
-      infinite () {
-
+      infinite (done) {
+        var vmthis = this
+        setTimeout(function () {
+          for (var i = 0; i < 3; i++) {
+            vmthis.combos.push('http://i.lifevccdn.com/upload/combinationchart/e561e13a48f64df3a6305cc4bd72935d_d1242x0.jpg')
+          }
+          done()
+        }, 1000)
       },
       toTop () {
         this.$refs.home_scroller.scrollTo(0, 0, true)

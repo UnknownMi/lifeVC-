@@ -13,12 +13,12 @@
           <form id="tellogin-form">
             <ul class="fm_list">
               <li>
-                <input id="txtMobile" type="tel" maxlength="11"
+                <input id="txtMobile" type="tel" maxlength="11" v-model="phone"
                        placeholder="请输入手机号" required="required" class="field_ipt">
-                <a class="fidld_skip">获取验证码</a>
+                <a class="fidld_skip" @click="reqCord">获取验证码</a>
               </li>
               <li>
-                <input type="text" placeholder="请输入手机验证码"
+                <input type="text" placeholder="请输入手机验证码" v-model="smscode"
                        maxlength="10" id="regSmsCaptcha" required="required"
                        class="field_ipt">
               </li>
@@ -32,8 +32,8 @@
                 <span>账号密码登陆</span>
               </a>
             </div>
-            <input type="button" value="登录" class="btn_login">
-            <input type="button" value="注册" class="btn_regisiter">
+            <input type="button" value="登录" class="btn_login" @click="login">
+            <input type="button" value="注册" class="btn_regisiter" @click="routeChange('register')">
           </form>
         </div>
       </div>
@@ -43,9 +43,56 @@
 
 <script>
   export default {
+    data () {
+      return {
+        phone: '',
+        smscode: '',
+        lastCode: ''
+      }
+    },
     methods: {
       jumpback () {
         history.back(-1)
+      },
+      routeChange (hash) {
+        this.$router.push('/' + hash)
+      },
+      reqCord () {
+        var phone = this.phone
+        this.$ajax({
+          method: 'get',
+          url: 'http://192.168.21.66:3000/smscheck',
+          params: {
+            phone: phone
+          }
+        })
+          .then((response) => {
+            this.lastCode = response.data
+            console.log(response.data)
+          }, (response) => {
+            console.log('errorE')
+          })
+      },
+      login () {
+        var phone = this.phone
+        var smscode = this.smscode
+        console.log(smscode, this.lastCode)
+        if (+smscode === this.lastCode) {
+          this.$ajax({
+            method: 'get',
+            url: 'http://192.168.21.66:3000/login',
+            params: {
+              phone
+            }
+          })
+            .then((response) => {
+              console.log(response.data)
+            }, (response) => {
+              console.log('errorE')
+            })
+        } else {
+          console.log('验证码错误')
+        }
       }
     }
   }

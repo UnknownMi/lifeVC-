@@ -5,6 +5,7 @@ import App from './App'
 import Router from 'vue-router'
 import VueScroller from 'vue-scroller'
 import VueLazyload from 'vue-lazyload'
+import Axios from 'axios'
 
 import './common/reset.css'
 import './common/remFit'
@@ -27,6 +28,7 @@ Vue.use(VueLazyload, {
   loading: '../static/image/loading.png',
   try: 3
 })
+Vue.prototype.$ajax = Axios
 
 let router = new Router({
   linkActiveClass: 'selected',

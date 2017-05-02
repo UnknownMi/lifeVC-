@@ -13,13 +13,14 @@
             <form id="register-form">
               <ul class="fm_list register_distance">
                 <li>
-                  <input id="txtMobile" type="tel" maxlength="11"
-                         placeholder="请输入手机号" required="required" class="field_ipt">
+                  <input id="txtMobile" type="tel" maxlength="11" name="phone"
+                         placeholder="请输入手机号" required="required" class="field_ipt"
+                          v-model="phone">
                 </li>
                 <li>
-                  <input type="text" maxlength="20"
+                  <input type="text" maxlength="20" name="password"
                          placeholder="请设置6-20位密码,包含字母、数字或符号" id="regPwd"
-                         required="required" class="field_ipt">
+                         required="required" class="field_ipt" v-model="password">
                 </li>
                 <li>
                   <input required="required" type="text"
@@ -33,17 +34,17 @@
                   </div>
                 </li>
                 <li>
-                  <input type="text" placeholder="请输入手机验证码"
+                  <input type="text" placeholder="请输入手机验证码" name="smscode"
                          maxlength="10" id="regSmsCaptcha" required="required"
-                         class="field_ipt">
-                  <a class="fidld_skip">获取验证码</a>
+                         class="field_ipt" v-model="smscode">
+                  <a class="fidld_skip" @click="reqCord">获取验证码</a>
                 </li>
               </ul>
               <p>
                 遇到问题？请<a href="javascript:;">联系客服</a>
               </p>
-              <input type="button" value="注册" class="btn_regisiter">
-              <input type="button" value="登录" class="btn_login">
+              <input type="button" value="注册" class="btn_regisiter" @click="regist">
+              <input type="button" value="登录" class="btn_login" @click="routeChange('login')">
             </form>
           </div>
         </div>
@@ -53,9 +54,59 @@
 
 <script>
   export default {
+    data () {
+      return {
+        phone: '',
+        password: '',
+        smscode: '',
+        lastCode: ''
+      }
+    },
     methods: {
       jumpback () {
         history.back(-1)
+      },
+      routeChange (hash) {
+        this.$router.push('/' + hash)
+      },
+      reqCord () {
+        var phone = this.phone
+        this.$ajax({
+          method: 'get',
+          url: 'http://192.168.21.66:3000/smscheck',
+          params: {
+            phone: phone
+          }
+        })
+          .then((response) => {
+            this.lastCode = response.data
+            console.log(response.data)
+          }, (response) => {
+            console.log('errorE')
+          })
+      },
+      regist () {
+        var phone = this.phone
+        var password = this.password
+        var smscode = this.smscode
+        console.log(smscode, this.lastCode)
+        if (+smscode === this.lastCode) {
+          this.$ajax({
+            method: 'get',
+            url: 'http://192.168.21.66:3000/regist',
+            params: {
+              phone,
+              password
+            }
+          })
+            .then((response) => {
+              console.log(response.data)
+            }, (response) => {
+              console.log('errorE')
+            })
+        } else {
+          console.log('验证码错误')
+        }
       }
     }
   }
